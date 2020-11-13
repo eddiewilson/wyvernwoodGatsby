@@ -8,9 +8,20 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import styled from "styled-components"
+import backgroundLeaves from "../images/background-leaves.svg"
+import colors from "../theme/colors"
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
 import "./layout.css"
+import theme from "../gatsby-theme-material-ui-top-layout/theme"
+
+const BackgroundLeaves = styled.div`
+  background: url(${backgroundLeaves}), ${colors.primary};
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  min-height: 3000px;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,25 +35,11 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+    <BackgroundLeaves>
+      <ThemeProvider theme={theme}>
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      </ThemeProvider>
+    </BackgroundLeaves>
   )
 }
 

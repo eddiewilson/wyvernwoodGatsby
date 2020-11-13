@@ -1,21 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import HeaderAnimation from "../components/headerAnimation"
+import Intro from "../components/intro"
+import styled from "styled-components"
+import Grid from "@material-ui/core/Grid"
+
+const Wrapper = styled.div``
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <Wrapper>
+      <SEO title="Home" />
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <HeaderAnimation />
+        </Grid>
+        <Grid container direction="column" justify="center" alignItems="center">
+          <Grid item xs={12} md={6}>
+            <Intro />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            Newsletter section
+          </Grid>
+          <Grid item xs={12} md={6}>
+            Social section
+          </Grid>
+        </Grid>
+      </Grid>
+    </Wrapper>
   </Layout>
 )
 
