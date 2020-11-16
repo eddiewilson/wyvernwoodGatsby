@@ -8,9 +8,12 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     position: "relative",
     zIndex: "-1",
+    transform: "scale(1.5)",
   },
   video: {
-    transform: "scale(1.5)",
+    [theme.breakpoints.up("md")]: {
+      transform: "scale(1)",
+    },
   },
 }))
 
