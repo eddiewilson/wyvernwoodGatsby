@@ -1,12 +1,9 @@
 import React from "react"
-import styled from "styled-components"
-import { Typography } from "@material-ui/core"
-
-const Wrapper = styled.div``
+import { Typography, Box } from "@material-ui/core"
 
 const Intro = () => {
   return (
-    <Wrapper>
+    <Box my={4}>
       <Typography
         variant={"h1"}
         align={"center"}
@@ -15,7 +12,7 @@ const Intro = () => {
         Aenean acdo bibendum blandit nibh. Suspendisse non commodo tellus.
         Pellentesque molestie tincidunt.
       </Typography>
-    </Wrapper>
+    </Box>
   )
 }
 
