@@ -27,7 +27,7 @@ const IndexPage = () => (
       </Grid>
       <Main>
         <Grid container direction="column" justify="center" alignItems="center">
-          <Grid item xs={11} md={12}>
+          <Grid item xs={11} md={8}>
             <Intro />
           </Grid>
           <Grid item xs={11} md={6}>

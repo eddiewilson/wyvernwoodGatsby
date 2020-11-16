@@ -11,7 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import backgroundLeaves from "../images/background-leaves@2x.png"
 import colors from "../theme/colors"
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
+import { ThemeProvider } from "@material-ui/core/styles"
+import CssBaseline from "@material-ui/core/CssBaseline"
 import "./layout.css"
 import theme from "../gatsby-theme-material-ui-top-layout/theme"
 
@@ -43,6 +44,7 @@ const Layout = ({ children }) => {
   return (
     <Wrapper>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <BackgroundLeaves />
         <main>{children}</main>
       </ThemeProvider>
