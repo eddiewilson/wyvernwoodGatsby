@@ -1,6 +1,7 @@
 import { createMuiTheme } from "@material-ui/core"
 import colors from "../theme/colors"
 import LostaMasta from "../theme/fonts"
+import wrappers from "../theme/wrappers"
 
 const theme = createMuiTheme({
   breakpoints: {
@@ -45,6 +46,9 @@ const theme = createMuiTheme({
     tertiary: {
       main: colors.tertiary,
     },
+  },
+  containers: {
+    primary: wrappers.primary,
   },
   overrides: {
     MuiCssBaseline: {
