@@ -1,18 +1,18 @@
 import React from "react"
-import styled from "styled-components"
+import { makeStyles } from "@material-ui/core/styles"
 
-const Wrapper = styled.div`
-  width: 100%;
-  video {
-    max-width: 100%;
-  }
-`
+const useStyles = makeStyles(theme => ({
+  root: `
+      max-width: 100%;  
+`,
+}))
 
-const Video = ({ videoSrcURL, videoTitle, ...props }) => (
-  <Wrapper>
-    <video muted autoPlay loop>
+const Video = ({ videoSrcURL, props }) => {
+  const classes = useStyles(props)
+  return (
+    <video className={classes.root} muted autoPlay loop>
       <source src={videoSrcURL} type="video/mp4" />
     </video>
-  </Wrapper>
-)
+  )
+}
 export default Video

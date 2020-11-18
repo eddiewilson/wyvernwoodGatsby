@@ -3,19 +3,9 @@ import colors from "../theme/colors"
 import LostaMasta from "../theme/fonts"
 
 const theme = createMuiTheme({
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1920,
-    },
-  },
   typography: {
     fontFamily: ["Montserrat", "losta_mastaregular"].join(","),
-    // color: colors.primaryFontColor,
-    backgroundColor: "white",
+    // color: colors.primaryFontColor
     h1: {
       fontFamily: "losta_mastaregular",
       color: "white",
@@ -43,13 +33,17 @@ const theme = createMuiTheme({
       main: colors.secondary,
     },
     tertiary: {
-      main: colors.tertiary,
+      main: "#1b474d",
     },
+    textSecondary: "white",
   },
   overrides: {
     MuiCssBaseline: {
       "@global": {
         "@font-face": [LostaMasta],
+        body: {
+          backgroundColor: "#1B474D",
+        },
       },
     },
   },

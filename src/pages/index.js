@@ -4,29 +4,30 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import AnimationSection from "../components/animationSection"
 import Intro from "../components/intro"
-import styled from "styled-components"
+
 import Grid from "@material-ui/core/Grid"
 import NewsletterSection from "../components/newsletterSection"
 import SocialSection from "../components/socialSection"
 
-const Wrapper = styled.div``
+import { makeStyles } from "@material-ui/core/styles"
 
-const Main = styled.div`
-  position: relative;
-  z-index: 1;
-`
+const useStyles = makeStyles({
+  root: `
+    position: relative;
+    z-index: 1;
+  `,
+})
 
-const IndexPage = () => (
-  <Layout>
-    <Wrapper>
+const IndexPage = props => {
+  const classes = useStyles(props)
+  return (
+    <Layout>
       <SEO title="Home" />
-      <Grid container>
-        <Grid item xs={12}>
-          <AnimationSection />
-        </Grid>
-      </Grid>
-      <Main>
+      <div className={classes.main}>
         <Grid container direction="column" justify="center" alignItems="center">
+          <Grid item xs={12}>
+            <AnimationSection />
+          </Grid>
           <Grid item xs={11} md={8}>
             <Intro />
           </Grid>
@@ -37,9 +38,8 @@ const IndexPage = () => (
             <SocialSection />
           </Grid>
         </Grid>
-      </Main>
-    </Wrapper>
-  </Layout>
-)
-
+      </div>
+    </Layout>
+  )
+}
 export default IndexPage

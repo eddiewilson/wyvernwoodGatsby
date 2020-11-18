@@ -5,11 +5,7 @@ const NewsletterSection = () => {
   return (
     <Box my={4}>
       <Box mb={2}>
-        <Typography
-          variant={"h2"}
-          align={"center"}
-          color={"primary.contrastText"}
-        >
+        <Typography variant={"h2"} align={"center"}>
           Sign Up Today To Win Free Opening Week Tickets
         </Typography>
       </Box>
