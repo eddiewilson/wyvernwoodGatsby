@@ -25,6 +25,13 @@ const HeaderAnimation = props => {
       ? videoFile
       : mobileVideo
 
+  const showHeading =
+    useMediaQuery(theme => theme.breakpoints.up("sm")) === true ? (
+      ""
+    ) : (
+      <HeaderHeading />
+    )
+
   const classes = useStyles(props)
   return (
     <div className={classes.root}>
@@ -33,7 +40,7 @@ const HeaderAnimation = props => {
         videoSrcURL={videoSrcUrl}
         videoTitle="WyvernWood Title"
       />
-      <HeaderHeading />
+      {showHeading}
     </div>
   )
 }
