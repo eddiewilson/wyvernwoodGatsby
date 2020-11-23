@@ -3,8 +3,9 @@ import { Typography, Box } from "@material-ui/core"
 import bg from "../../static/images/bg2-intro@2x.png"
 import mbg from "../../static/images/mbg2-intro@2x.png"
 import styled from "styled-components"
+import { withTheme } from "@material-ui/core/styles"
 
-const Root = styled.div`
+const Root = withTheme(styled.div`
   position: relative;
   .background {
     top: 0;
@@ -13,17 +14,17 @@ const Root = styled.div`
     right: 0;
     position: absolute;
     z-index: -1;
-    background-image: url(${bg});
+    background-image: url(${mbg});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    ${props => props.theme.breakpoints.up("sm")} {
+      background-image: url(${bg});
+    }
   }
-  @media only screen and (max-width: 600px) {
-    background-image: url(${mbg});
-  }
-`
+`)
 
-const Intro = () => {
+const Intro = props => {
   return (
     <Root>
       <div className="background"></div>
