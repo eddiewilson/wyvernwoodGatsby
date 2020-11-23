@@ -11,7 +11,7 @@ const Video = ({ videoSrcURL, props }) => {
   const classes = useStyles(props)
   return (
     <video className={classes.root} muted autoPlay loop>
-      <source src={videoSrcURL} type="video/mp4" />
+      <source src={videoSrcURL} type="video/webm" />
     </video>
   )
 }

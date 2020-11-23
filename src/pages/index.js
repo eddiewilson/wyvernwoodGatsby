@@ -14,7 +14,7 @@ import { makeStyles } from "@material-ui/core/styles"
 const useStyles = makeStyles({
   root: `
     position: relative;
-    z-index: 1;
+    //z-index: 1;
   `,
 })
 
@@ -23,20 +23,18 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title="Home" />
+      <Grid container direction="column" alignItems="center" justify="center">
+        <Grid item xs={12}>
+          <AnimationSection />
+        </Grid>
+      </Grid>
       <div className={classes.main}>
         <Grid container direction="column" justify="center" alignItems="center">
-          <Grid item xs={12}>
-            <AnimationSection />
-          </Grid>
           <Grid item xs={11} md={8}>
             <Intro />
           </Grid>
-          <Grid item xs={11} md={6}>
-            <NewsletterSection />
-          </Grid>
-          <Grid item xs={11} md={6}>
-            <SocialSection />
-          </Grid>
+          <NewsletterSection />
+          <SocialSection />
         </Grid>
       </div>
     </Layout>

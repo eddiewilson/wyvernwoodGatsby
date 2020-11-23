@@ -7,19 +7,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import BackgroundLeaves from "../components/backgroundLeaves.js"
-import backgroundLeaves from "../images/background-leaves@2x.png"
-import mobileBackgroundLeaves from "../images/mobile-background-leaves.svg"
-import { jssPreset, StylesProvider } from "@material-ui/core/styles"
+import backgroundLeaves from "../../static/images/background-leaves@2x.png"
+import mobileBackgroundLeaves from "../../static/images/mobile-background-leaves.svg"
+import { ThemeProvider } from "@material-ui/core/styles"
+import theme from "../gatsby-theme-material-ui-top-layout/theme"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
-
-import { create } from "jss"
-import jssTemplate from "jss-plugin-template"
+import Footer from "../components/footer"
 
 import CssBaseline from "@material-ui/core/CssBaseline"
-
-const jss = create({
-  plugins: [jssTemplate(), ...jssPreset().plugins],
-})
 
 const Layout = ({ children }) => {
   const backgroundImage =
@@ -28,11 +23,12 @@ const Layout = ({ children }) => {
       : mobileBackgroundLeaves
 
   return (
-    <StylesProvider jss={jss}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <BackgroundLeaves background={backgroundImage} />
       <main>{children}</main>
-    </StylesProvider>
+      <Footer />
+    </ThemeProvider>
   )
 }
 

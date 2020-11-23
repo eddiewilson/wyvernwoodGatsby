@@ -3,6 +3,15 @@ import colors from "../theme/colors"
 import LostaMasta from "../theme/fonts"
 
 const theme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
   typography: {
     fontFamily: ["Montserrat", "losta_mastaregular"].join(","),
     // color: colors.primaryFontColor
@@ -43,6 +52,7 @@ const theme = createMuiTheme({
         "@font-face": [LostaMasta],
         body: {
           backgroundColor: "#1B474D",
+          //backgroundColor: "tomato",
         },
       },
     },
