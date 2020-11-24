@@ -40,9 +40,17 @@ const Root = withTheme(styled.div`
 const HeaderAnimation = props => {
   const videoSrcUrl =
     useMediaQuery(theme => theme.breakpoints.up("sm")) === true ? (
-      <Video videoSrcURL={desktopVideo} videoTitle="WyvernWood Title" />
+      <Video
+        videoSrcURL={desktopVideo}
+        videoTitle="WyvernWood Title"
+        fileType="video/mp4"
+      />
     ) : (
-      <Video videoSrcURL={mobileVideo} videoTitle="WyvernWood Title" />
+      <Video
+        videoSrcURL={mobileVideo}
+        videoTitle="WyvernWood Title"
+        fileType="video/mp4"
+      />
     )
 
   return (

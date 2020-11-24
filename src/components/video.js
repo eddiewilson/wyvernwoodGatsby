@@ -18,13 +18,13 @@ const Root = withTheme(styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    width: 10%;
-    height: 10%;
+    width: 100vw;
+    height: 100vh;
     z-index: 999999;
   }
 `)
 
-const Video = ({ videoSrcURL, props }) => {
+const Video = props => {
   useEffect(() => {
     renderCanvas()
   }, [])
@@ -36,6 +36,7 @@ const Video = ({ videoSrcURL, props }) => {
 
     video.addEventListener("play", () => {
       function step() {
+        debugger
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
         requestAnimationFrame(step)
         applyColour(ctx)
@@ -53,12 +54,12 @@ const Video = ({ videoSrcURL, props }) => {
 
     document.querySelector("body").style.backgroundColor = `rgb(${colour})`
   }
-
+  console.log("props", props)
   return (
-    <Root>
-      <canvas id="canvas"></canvas>
+    <Root {...props}>
+      <canvas id="canvas" width="1440" height="900"></canvas>
       <video id="bgVideo" muted autoPlay loop playsInline>
-        <source src={videoSrcURL} type="video/mp4" />
+        <source src={props.videoSrcURL} type={props.fileType} />
       </video>
     </Root>
   )
