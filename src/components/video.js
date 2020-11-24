@@ -7,10 +7,11 @@ const Root = withTheme(styled.div`
   z-index: 0;
   max-width: 100%;
   video {
+    height: auto;
     max-width: 100%;
     object-fit: cover;
     position: relative;
-    z-index: 0;
+    z-index: -1;
   }
   canvas {
     position: absolute;
@@ -36,7 +37,6 @@ const Video = props => {
 
     video.addEventListener("play", () => {
       function step() {
-        debugger
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
         requestAnimationFrame(step)
         applyColour(ctx)

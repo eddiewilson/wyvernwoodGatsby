@@ -29,7 +29,7 @@ const Root = withTheme(styled.div`
       background: url(${bgVideo});
       background-repeat: no-repeat;
       background-size: contain;
-      height: 110vh;
+      height: 100vh;
     }
   }
   ${props => props.theme.breakpoints.up("sm")} {
