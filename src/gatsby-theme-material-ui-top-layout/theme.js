@@ -18,7 +18,8 @@ const theme = createMuiTheme({
     h1: {
       fontFamily: "losta_mastaregular",
       color: "white",
-      fontSize: "2.11rem",
+      fontSize: "2.375rem",
+      lineheight: "3rem",
 
       "@media (min-width:600px)": {
         fontSize: "3.333rem",
@@ -50,10 +51,6 @@ const theme = createMuiTheme({
     MuiCssBaseline: {
       "@global": {
         "@font-face": [LostaMasta],
-        body: {
-          backgroundColor: "#1B474D",
-          //backgroundColor: "tomato",
-        },
       },
     },
   },

@@ -6,9 +6,10 @@
  */
 import React from "react"
 import PropTypes from "prop-types"
-import BackgroundLeaves from "../components/backgroundLeaves.js"
-import backgroundLeaves from "../../static/images/background-leaves@2x.png"
-import mobileBackgroundLeaves from "../../static/images/mobile-background-leaves.svg"
+import styled from "styled-components"
+// import BackgroundLeaves from "../components/backgroundLeaves.js"
+// import backgroundLeaves from "../../static/images/background-leaves@2x.png"
+// import mobileBackgroundLeaves from "../../static/images/mobile-background-leaves.svg"
 import { ThemeProvider } from "@material-ui/core/styles"
 import theme from "../gatsby-theme-material-ui-top-layout/theme"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
@@ -16,16 +17,22 @@ import Footer from "../components/footer"
 
 import CssBaseline from "@material-ui/core/CssBaseline"
 
-const Layout = ({ children }) => {
-  const backgroundImage =
-    useMediaQuery(theme => theme.breakpoints.up("sm")) === true
-      ? backgroundLeaves
-      : mobileBackgroundLeaves
+const BackgroundColor = styled.div.attrs({ id: "background" })`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+`
 
+const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BackgroundLeaves background={backgroundImage} />
+      <BackgroundColor />
       <main>{children}</main>
       <Footer />
     </ThemeProvider>

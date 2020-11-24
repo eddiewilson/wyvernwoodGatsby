@@ -3,55 +3,52 @@ import useMediaQuery from "@material-ui/core/useMediaQuery"
 import styled from "styled-components"
 
 import bgVideo from "../../static/images/bg1-video@2x.png"
-
 import Video from "./video"
-import videoFile from "../../static/video/04 Website_intro_Loop_desktop_v2.mp4"
-// import mobileVideo from "../../static/video/WW_Website_intro_loop_mobile.mp4"
-// import test from "../../static/video/test.webm"
-import HeaderHeading from "./headerHeading"
+import desktopVideo from "../../static/video/WW_Website_intro_loop_AWA_desktop.mp4"
+import mobileVideo from "../../static/video/WW_Website_intro_loop_AWA_mobile.mp4"
 
-const Root = styled.div`
-    display: flex;
-    justify-content: center;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    .background{
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      position: absolute;
-      z-index: 0;
-      background-image: url(${bgVideo});
-      background-size: contain;
+import { withTheme } from "@material-ui/core/styles"
+
+const Root = withTheme(styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 65vh;
+  .background {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    ${props => props.theme.breakpoints.up("sm")} {
+      background: url(${bgVideo});
       background-repeat: no-repeat;
-      background-position: center;
+      background-size: contain;
+      height: 110vh;
     }
-`
+  }
+  ${props => props.theme.breakpoints.up("sm")} {
+    height: 100vh;
+  }
+`)
 
 const HeaderAnimation = props => {
   const videoSrcUrl =
-    useMediaQuery(theme => theme.breakpoints.up("sm")) === true
-      ? videoFile
-      : videoFile
-
-  const showHeading =
     useMediaQuery(theme => theme.breakpoints.up("sm")) === true ? (
-      ""
+      <Video videoSrcURL={desktopVideo} videoTitle="WyvernWood Title" />
     ) : (
-      <HeaderHeading />
+      <Video videoSrcURL={mobileVideo} videoTitle="WyvernWood Title" />
     )
 
-  // const classes = useStyles(props)
   return (
     <Root>
       <div className="background"></div>
-      <Video
-        videoSrcURL={videoSrcUrl}
-        videoTitle="WyvernWood Title"
-      />
-      {showHeading}
+      {videoSrcUrl}
     </Root>
   )
 }

@@ -6,7 +6,6 @@ import AnimationSection from "../components/animationSection"
 import Intro from "../components/intro"
 
 import Grid from "@material-ui/core/Grid"
-import NewsletterSection from "../components/newsletterSection"
 import SocialSection from "../components/socialSection"
 
 import { makeStyles } from "@material-ui/core/styles"
@@ -24,18 +23,14 @@ const IndexPage = props => {
     <Layout>
       <SEO title="Home" />
       <Grid container direction="column" alignItems="center" justify="center">
-        <Grid item xs={12}>
+        <Grid item xs>
           <AnimationSection />
         </Grid>
       </Grid>
       <div className={classes.main}>
-        <Grid container direction="column" justify="center" alignItems="center">
-          <Grid item xs={11} md={8}>
-            <Intro />
-          </Grid>
-          <NewsletterSection />
-          <SocialSection />
-        </Grid>
+        <Intro />
+        {/* <NewsletterSection /> */}
+        <SocialSection />
       </div>
     </Layout>
   )
