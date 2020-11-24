@@ -12,7 +12,6 @@ import styled from "styled-components"
 // import mobileBackgroundLeaves from "../../static/images/mobile-background-leaves.svg"
 import { ThemeProvider } from "@material-ui/core/styles"
 import theme from "../gatsby-theme-material-ui-top-layout/theme"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
 import Footer from "../components/footer"
 
 import CssBaseline from "@material-ui/core/CssBaseline"

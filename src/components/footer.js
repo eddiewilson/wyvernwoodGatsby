@@ -15,7 +15,9 @@ const Root = styled.footer`
 const Footer = props => {
   const data = useStaticQuery(graphql`
     query {
-      file(name: { eq: "logo-stack@2x" }) {
+      file(
+        name: { eq: "Wyvernwood_Primary_Full_Colour_Logo__WITH LOCKUP_CMYK" }
+      ) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
