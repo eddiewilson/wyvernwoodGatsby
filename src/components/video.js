@@ -12,6 +12,7 @@ const Root = withTheme(styled.div`
     object-fit: cover;
     position: relative;
     z-index: -1;
+    max-height: 100vh;
   }
 `)
 
