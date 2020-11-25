@@ -20,7 +20,9 @@ const Root = withTheme(styled.div`
     background-repeat: no-repeat;
     transform: scaleX(1);
     ${props => props.theme.breakpoints.up("sm")} {
-      transform: scaleX(-1);
+      transform: scaleX(1);
+      background-position: ${props => props.theme.spacing(1)}px
+        ${props => props.theme.spacing(1)}px;
     }
   }
 `)
@@ -63,7 +65,7 @@ const SocialSection = props => {
       <div className="background"></div>
       <Grid container direction="column" justify="center" alignItems="center">
         <Grid item xs={11} md={6}>
-          <BoxLayer my={4}>
+          <BoxLayer my={4} pb={6}>
             <Box mb={2}>
               <Typography variant={"h2"} align={"center"}>
                 Follow Our Story So Far On Social.
