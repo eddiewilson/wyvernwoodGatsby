@@ -20,7 +20,10 @@ const Root = withTheme(styled.div`
     background-image: url(${bg});
     background-size: contain;
     background-repeat: no-repeat;
-    transform: scaleX(-1);
+    transform: scaleX(1);
+    ${props => props.theme.breakpoints.up("sm")} {
+      transform: scaleX(-1);
+    }
   }
 `)
 

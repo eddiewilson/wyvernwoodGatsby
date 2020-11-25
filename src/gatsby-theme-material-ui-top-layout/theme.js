@@ -51,6 +51,12 @@ const theme = createMuiTheme({
     MuiCssBaseline: {
       "@global": {
         "@font-face": [LostaMasta],
+        html: {
+          backgroundColor: "#00363a",
+        },
+        body: {
+          backgroundColor: "#00363a",
+        },
       },
     },
   },
