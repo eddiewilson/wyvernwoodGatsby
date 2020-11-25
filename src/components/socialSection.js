@@ -31,6 +31,7 @@ const SocialLinks = withTheme(styled.div`
   display: flex;
   flex-direction: row;
   a {
+    transition: all 0.2s ease-in-out 0s;
     svg {
       width: 40px;
       height: 40px;
@@ -40,7 +41,7 @@ const SocialLinks = withTheme(styled.div`
     }
     &:hover {
       path {
-        fill: ${props => props.theme.palette.primary.main};
+        fill: white;
       }
     }
   }
