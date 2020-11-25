@@ -52,10 +52,10 @@ const theme = createMuiTheme({
       "@global": {
         "@font-face": [LostaMasta],
         html: {
-          backgroundColor: "#00363a",
+          backgroundColor: "#1b474d",
         },
         body: {
-          backgroundColor: "#00363a",
+          backgroundColor: "#1b474d",
         },
       },
     },
