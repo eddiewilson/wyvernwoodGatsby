@@ -1,14 +1,10 @@
 import React from "react"
-
+import { Grid, makeStyles } from "@material-ui/core/"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import AnimationSection from "../components/animationSection"
 import Intro from "../components/intro"
-
-import Grid from "@material-ui/core/Grid"
 import SocialSection from "../components/socialSection"
-
-import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles({
   root: `

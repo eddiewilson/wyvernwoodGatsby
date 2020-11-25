@@ -1,12 +1,10 @@
 import React from "react"
+import styled from "styled-components"
+import { Typography, Box, Grid, SvgIcon, withTheme } from "@material-ui/core"
 import FacebookLogo from "../../static/svgs/inline/icon_facebook.svg"
 import InstagramLogo from "../../static/svgs/inline/icon_instagram.inline.svg"
 import YouTubeLogo from "../../static/svgs/inline/icon_YouTube.inline.svg"
-
-import { Typography, Box, Grid, SvgIcon, withTheme } from "@material-ui/core"
-
 import bg from "../../static/images/bg-4-social@2x.png"
-import styled from "styled-components"
 
 const Root = withTheme(styled.div`
   position: relative;

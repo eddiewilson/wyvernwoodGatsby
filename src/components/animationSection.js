@@ -1,15 +1,11 @@
 import React from "react"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
+import { withTheme, useMediaQuery } from "@material-ui/core/"
 import styled from "styled-components"
 
 import bgVideo from "../../static/images/bg1-video@2x.png"
 import Video from "./video"
-// import desktopVideo from "../../static/video/WW_Website_intro_loop_AWA_desktop.mp4"
-import mobileVideo from "../../static/video/WW_Website_intro_loop_AWA_mobile.mp4"
-
 import desktopVideo from "../../static/video/Wyvernwood - 00282B test.mp4"
-
-import { withTheme } from "@material-ui/core/styles"
+import mobileVideo from "../../static/video/WW_Website_intro_loop_AWA_mobile.mp4"
 
 const Root = withTheme(styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { withTheme } from "@material-ui/core/styles"
+import { withTheme } from "@material-ui/core/"
 
 const Root = withTheme(styled.div`
   position: relative;

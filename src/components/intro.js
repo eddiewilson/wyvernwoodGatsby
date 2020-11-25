@@ -1,9 +1,8 @@
 import React from "react"
-import { Typography, Box } from "@material-ui/core"
+import styled from "styled-components"
+import { Grid, withTheme, Typography, Box } from "@material-ui/core/"
 import bg from "../../static/images/bg2-intro@2x.png"
 import mbg from "../../static/images/mbg2-intro@2x.png"
-import styled from "styled-components"
-import { Grid, withTheme } from "@material-ui/core/"
 
 const Root = withTheme(styled.div`
   position: relative;

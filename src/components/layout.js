@@ -7,10 +7,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-// import BackgroundLeaves from "../components/backgroundLeaves.js"
-// import backgroundLeaves from "../../static/images/background-leaves@2x.png"
-// import mobileBackgroundLeaves from "../../static/images/mobile-background-leaves.svg"
-import { ThemeProvider } from "@material-ui/core/styles"
+import { ThemeProvider } from "@material-ui/core/"
 import theme from "../gatsby-theme-material-ui-top-layout/theme"
 import Footer from "../components/footer"
 

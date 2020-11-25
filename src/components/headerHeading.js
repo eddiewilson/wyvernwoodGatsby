@@ -1,6 +1,5 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
-import { Typography } from "@material-ui/core"
+import { Typography, makeStyles } from "@material-ui/core"
 
 const HeaderHeading = props => {
   const classes = useStyles(props)

@@ -1,10 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import bg from "../../static/images/bg5-footer@2x.png"
 import { Box, Grid, withTheme } from "@material-ui/core"
-
 import { useStaticQuery, graphql } from "gatsby" // to query for image data
 import Img from "gatsby-image"
+import bg from "../../static/images/bg5-footer@2x.png"
 
 const Root = withTheme(styled.footer`
   margin-bottom: ${props => props.theme.spacing(2)}px;

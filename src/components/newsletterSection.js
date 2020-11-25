@@ -1,10 +1,7 @@
 import React from "react"
-import bg from "../../static/images/bg2-intro@2x.png"
 import styled from "styled-components"
-import { ThemeProvider } from "@material-ui/core/styles"
-import theme from "../gatsby-theme-material-ui-top-layout/theme"
-// import { spacing } from "@material-ui/core/styles"
 import {
+  ThemeProvider,
   Typography,
   Box,
   Button,
@@ -14,6 +11,8 @@ import {
   Input,
   FormHelperText,
 } from "@material-ui/core"
+import theme from "../gatsby-theme-material-ui-top-layout/theme"
+import bg from "../../static/images/bg2-intro@2x.png"
 
 const Root = styled.div`
   position: relative;
