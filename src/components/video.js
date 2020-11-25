@@ -1,26 +1,32 @@
 import React from "react"
 import styled from "styled-components"
-import { withTheme } from "@material-ui/core/"
+import { withTheme } from "@material-ui/core/styles"
 
 const Root = withTheme(styled.div`
-  position: relative;
-  z-index: 0;
-  max-width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  width: 100vw;
   video {
-    height: auto;
-    max-width: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: -1;
-    max-height: 100vh;
-    width: 100%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 `)
 
 const Video = props => {
   return (
     <Root {...props}>
-      <video id="bgVideo" muted autoPlay loop playsInline>
+      <video
+        id="bgVideo"
+        muted
+        autoPlay
+        loop
+        playsInline
+        style={{ width: `100%` }}
+      >
         <source src={props.videoSrcURL} type={props.fileType} />
       </video>
     </Root>

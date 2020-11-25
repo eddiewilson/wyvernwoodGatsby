@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import bgVideo from "../../static/images/bg1-video@2x.png"
 import Video from "./video"
-import desktopVideo from "../../static/video/Wyvernwood - 00282B test.mp4"
+import desktopVideo from "../../static/video/Wyvernwood00282Btest.mp4"
 import mobileVideo from "../../static/video/WW_Website_intro_loop_AWA_mobile.mp4"
 
 const Root = withTheme(styled.div`
@@ -36,20 +36,19 @@ const Root = withTheme(styled.div`
 `)
 
 const HeaderAnimation = props => {
-  const videoSrcUrl =
-    useMediaQuery(theme => theme.breakpoints.up("sm")) === true ? (
-      <Video
-        videoSrcURL={desktopVideo}
-        videoTitle="WyvernWood Title"
-        fileType="video/mp4"
-      />
-    ) : (
-      <Video
-        videoSrcURL={mobileVideo}
-        videoTitle="WyvernWood Title"
-        fileType="video/mp4"
-      />
-    )
+  const videoSrcUrl = useMediaQuery(theme => theme.breakpoints.up("sm")) ? (
+    <Video
+      videoSrcURL={desktopVideo}
+      videoTitle="WyvernWood Title"
+      fileType="video/mp4"
+    />
+  ) : (
+    <Video
+      videoSrcURL={mobileVideo}
+      videoTitle="WyvernWood Title"
+      fileType="video/mp4"
+    />
+  )
 
   return (
     <Root>
