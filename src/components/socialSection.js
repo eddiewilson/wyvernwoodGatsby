@@ -5,6 +5,7 @@ import FacebookLogo from "../../static/svgs/inline/icon_facebook.svg"
 import InstagramLogo from "../../static/svgs/inline/icon_instagram.inline.svg"
 import YouTubeLogo from "../../static/svgs/inline/icon_YouTube.inline.svg"
 import bg from "../../static/images/bg-4-social@2x.png"
+import mbg from "../../static/images/mbg4-social@2x.png"
 
 const Root = withTheme(styled.div`
   position: relative;
@@ -15,7 +16,9 @@ const Root = withTheme(styled.div`
     right: 0;
     position: absolute;
     z-index: 0;
-    background-image: url(${bg});
+    background-image: url(${mbg});
+    background-position: ${props => props.theme.spacing(0)}px
+      ${props => props.theme.spacing(3)}px;
     background-size: contain;
     background-repeat: no-repeat;
     transform: scaleX(1);
@@ -23,6 +26,7 @@ const Root = withTheme(styled.div`
       transform: scaleX(1);
       background-position: ${props => props.theme.spacing(1)}px
         ${props => props.theme.spacing(1)}px;
+      background-image: url(${bg});
     }
   }
 `)
@@ -47,10 +51,14 @@ const SocialLinks = withTheme(styled.div`
   }
 `)
 
-const BoxLayer = styled(Box)`
+const BoxLayer = withTheme(styled(Box)`
   position: relative;
   z-index: 1;
-`
+  padding-bottom: ${props => props.theme.spacing(1)}px;
+  ${props => props.theme.breakpoints.up("sm")} {
+    padding-bottom: ${props => props.theme.spacing(6)}px;
+  }
+`)
 
 const IconsWrapper = withTheme(styled(Box).attrs({ className: "IconsWrapper" })`
   margin: ${props => props.theme.spacing(2)}px 0;
@@ -65,7 +73,7 @@ const SocialSection = props => {
       <div className="background"></div>
       <Grid container direction="column" justify="center" alignItems="center">
         <Grid item xs={11} md={6}>
-          <BoxLayer my={4} pb={6}>
+          <BoxLayer my={4}>
             <Box mb={2}>
               <Typography variant={"h2"} align={"center"}>
                 Follow Our Story So Far On Social.
