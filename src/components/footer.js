@@ -27,7 +27,7 @@ const Footer = props => {
         name: { eq: "Wyvernwood_Primary_Full_Colour_Logo__WITH LOCKUP_CMYK" }
       ) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 286) {
             ...GatsbyImageSharpFluid
           }
         }
