@@ -3,16 +3,17 @@ import styled from "styled-components"
 import { withTheme } from "@material-ui/core/styles"
 
 const Root = withTheme(styled.div`
-  padding-bottom: 56.25%;
-  height: 0;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   video {
-    left: 50%;
     min-height: 100%;
     min-width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    transform: scale(1.5);
+    ${props => props.theme.breakpoints.up("sm")} {
+      height: 100vh;
+      transform: scale(1);
+    }
   }
 `)
 

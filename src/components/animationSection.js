@@ -5,7 +5,7 @@ import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 import bgVideo from "../../static/images/bg1-video@2x.png"
 import Video from "./video"
-import desktopVideo from "../../static/video/Wyvernwood00282Btest.mp4"
+import desktopVideo from "../../static/video/WW_Website_intro_loop_AWA_desktop.mp4"
 import mobileVideo from "../../static/video/WW_Website_intro_loop_AWA_mobile.mp4"
 
 const Root = withTheme(styled.div`
@@ -14,6 +14,7 @@ const Root = withTheme(styled.div`
   position: relative;
   width: 100vw;
   height: 65vh;
+  margin-top: ${props => props.theme.spacing(3)}px;
   .background {
     top: 0;
     bottom: 0;
@@ -33,6 +34,7 @@ const Root = withTheme(styled.div`
   }
   ${props => props.theme.breakpoints.up("sm")} {
     height: 100vh;
+    margin-top: 0;
   }
 `)
 
@@ -41,25 +43,23 @@ const HeaderAnimation = props => {
 
   console.log(breakpoints)
 
-  const videoDevice = breakpoints.xs ? (
-    <Video
-      videoSrcURL={mobileVideo}
-      videoTitle="WyvernWood Title"
-      fileType="video/mp4"
-    />
-  ) : (
-    <Video
-      videoSrcURL={desktopVideo}
-      videoTitle="WyvernWood Title"
-      fileType="video/mp4"
-    />
-  )
-
   return (
     <Root>
       <div className="background"></div>
 
-      {videoDevice}
+      {breakpoints.l === true ? (
+        <Video
+          videoSrcURL={desktopVideo}
+          videoTitle="WyvernWood Title"
+          fileType="video/mp4"
+        />
+      ) : (
+        <Video
+          videoSrcURL={mobileVideo}
+          videoTitle="WyvernWood Title"
+          fileType="video/mp4"
+        />
+      )}
     </Root>
   )
 }
