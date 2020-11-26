@@ -42,12 +42,12 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-breakpoints`,
-      // options: {
-      //   queries: defaultQueries,
-      // },
-    },
+    // {
+    //   resolve: `gatsby-plugin-breakpoints`,
+    //   // options: {
+    //   //   queries: defaultQueries,
+    //   // },
+    // },
     // {
     //   resolve: `gatsby-theme-material-ui`,
     //   options: {

@@ -1,11 +1,11 @@
 import React from "react"
 import { withTheme } from "@material-ui/core/"
 import styled from "styled-components"
-// import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 import bgVideo from "../../static/images/bg1-video@2x.png"
 import Video from "./video"
-import desktopVideo from "../../static/video/WW_Website_intro_loop_AWA_desktop.mp4"
+import mp4 from "../../static/video/WW_Website_intro_loop_AWA_desktop.mp4"
+import webm from "../../static/video/TEST.webm"
 // import mobileVideo from "../../static/video/WW_Website_intro_loop_AWA_mobile.mp4"
 
 const Root = withTheme(styled.div`
@@ -42,11 +42,7 @@ const HeaderAnimation = props => {
   return (
     <Root>
       <div className="background"></div>
-      <Video
-        videoSrcURL={desktopVideo}
-        videoTitle="WyvernWood Title"
-        fileType="video/mp4"
-      />
+      <Video videoWebM={webm} videoMp4={mp4} videoTitle="WyvernWood Title" />
     </Root>
   )
 }

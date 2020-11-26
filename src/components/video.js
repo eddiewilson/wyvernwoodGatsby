@@ -28,7 +28,9 @@ const Video = props => {
         playsInline
         style={{ width: `100%` }}
       >
-        <source src={props.videoSrcURL} type={props.fileType} />
+        <source src={props.videoWebM} type="video/webm" />
+        <source src={props.videoMp4} type="video/mp4" />
+        Sorry, your browser doesn't support embedded videos.
       </video>
     </Root>
   )
