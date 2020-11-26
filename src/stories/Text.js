@@ -1,20 +1,35 @@
 import React from "react"
 import PropTypes from "prop-types"
-// import "./button.css"
+import styled from "styled-components"
 
 /**
  * Primary UI component for user interaction
  */
+
+const TextWrapper = styled.div`
+  &.storybook-text--dropcap {
+    p {
+      &:first-child {
+        &:first-letter {
+          float: left;
+          font-size: 6rem;
+          line-height: 0.65;
+          margin: 0.1em 0.1em 0.2em 0;
+        }
+      }
+    }
+  }
+`
+
 export const Text = ({ dropCap, backgroundColor, text, ...props }) => {
   const mode = dropCap ? "storybook-text--dropcap" : "storybook-text"
   return (
-    <div
-      type="button"
+    <TextWrapper
       className={["storybook-text", mode].join(" ")}
       style={backgroundColor && { backgroundColor }}
       {...props}
       dangerouslySetInnerHTML={{ __html: text }}
-    ></div>
+    ></TextWrapper>
   )
 }
 
@@ -37,7 +52,7 @@ Text.propTypes = {
    */
 }
 
-Button.defaultProps = {
+Text.defaultProps = {
   backgroundColor: null,
   dropCap: false,
 }
