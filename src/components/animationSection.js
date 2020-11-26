@@ -1,6 +1,7 @@
 import React from "react"
-import { withTheme, useMediaQuery } from "@material-ui/core/"
+import { withTheme } from "@material-ui/core/"
 import styled from "styled-components"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 import bgVideo from "../../static/images/bg1-video@2x.png"
 import Video from "./video"
@@ -36,15 +37,19 @@ const Root = withTheme(styled.div`
 `)
 
 const HeaderAnimation = props => {
-  const videoSrcUrl = useMediaQuery(theme => theme.breakpoints.up("sm")) ? (
+  const breakpoints = useBreakpoint()
+
+  console.log(breakpoints)
+
+  const videoDevice = breakpoints.xs ? (
     <Video
-      videoSrcURL={desktopVideo}
+      videoSrcURL={mobileVideo}
       videoTitle="WyvernWood Title"
       fileType="video/mp4"
     />
   ) : (
     <Video
-      videoSrcURL={mobileVideo}
+      videoSrcURL={desktopVideo}
       videoTitle="WyvernWood Title"
       fileType="video/mp4"
     />
@@ -53,7 +58,8 @@ const HeaderAnimation = props => {
   return (
     <Root>
       <div className="background"></div>
-      {videoSrcUrl}
+
+      {videoDevice}
     </Root>
   )
 }

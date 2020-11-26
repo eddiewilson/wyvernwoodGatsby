@@ -1,3 +1,10 @@
+const defaultQueries = {
+  xs: "(max-width: 320px)",
+  sm: "(max-width: 720px)",
+  md: "(max-width: 1024px)",
+  l: "(max-width: 1536px)",
+}
+
 module.exports = {
   siteMetadata: {
     title: `Wyvernwood - Another World Awaits`,
@@ -34,6 +41,12 @@ module.exports = {
           include: /inline|logos/,
         },
       },
+    },
+    {
+      resolve: `gatsby-plugin-breakpoints`,
+      // options: {
+      //   queries: defaultQueries,
+      // },
     },
     // {
     //   resolve: `gatsby-theme-material-ui`,
