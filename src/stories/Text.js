@@ -1,58 +1,78 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { withTheme, Typography } from "@material-ui/core"
 
-/**
- * Primary UI component for user interaction
- */
-
-const TextWrapper = styled.div`
+const TextWrapper = withTheme(styled(Typography)`
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
   &.storybook-text--dropcap {
     p {
       &:first-child {
+        margin-top: 0;
         &:first-letter {
           float: left;
-          font-size: 6rem;
           line-height: 0.65;
           margin: 0.1em 0.1em 0.2em 0;
+          ${props => props.theme.typography.dropCap};
         }
       }
     }
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+    }
+    &:before {
+      margin-top: -0.2em;
+    }
+    &:after {
+      margin-bottom: -0.15em;
+    }
   }
-`
+  &.storybook-text--columnCount {
+    column-fill: balance;
+    column-gap: ${props => props.theme.spacing(2)}px;
+    ${props => props.theme.breakpoints.up("sm")} {
+      column-count: 1;
+    }
+  }
+`)
 
-export const Text = ({ dropCap, backgroundColor, text, ...props }) => {
-  const mode = dropCap ? "storybook-text--dropcap" : "storybook-text"
+export const Text = ({
+  dropCap,
+  backgroundColor,
+  text,
+  columnCount,
+  ...props
+}) => {
+  const classes = ["storybook-text"]
+  const mode = dropCap ? "storybook-text--dropcap" : ""
+  const columns = columnCount ? "storybook-text--columnCount" : ""
+
+  classes.push(mode, columns)
+
   return (
     <TextWrapper
-      className={["storybook-text", mode].join(" ")}
-      style={backgroundColor && { backgroundColor }}
+      className={[...classes].join(" ")}
+      style={columnCount && { columnCount }}
       {...props}
+      variant={"body1"}
       dangerouslySetInnerHTML={{ __html: text }}
     ></TextWrapper>
   )
 }
 
 Text.propTypes = {
-  /**
-   * Should this be dropcapped?
-   */
   dropCap: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
-
-  /**
-   * Text content
-   */
+  columnCount: PropTypes.number,
   text: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
 }
 
 Text.defaultProps = {
-  backgroundColor: null,
   dropCap: false,
+  columnCount: 1,
 }

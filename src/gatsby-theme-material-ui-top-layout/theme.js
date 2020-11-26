@@ -33,6 +33,9 @@ const theme = createMuiTheme({
     body1: {
       color: "white",
     },
+    dropCap: {
+      fontSize: "7.375rem",
+    },
   },
   spacing: 30,
   palette: {
