@@ -1,12 +1,12 @@
 import React from "react"
 import { withTheme } from "@material-ui/core/"
 import styled from "styled-components"
-import { useBreakpoint } from "gatsby-plugin-breakpoints"
+// import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 import bgVideo from "../../static/images/bg1-video@2x.png"
 import Video from "./video"
 import desktopVideo from "../../static/video/WW_Website_intro_loop_AWA_desktop.mp4"
-import mobileVideo from "../../static/video/WW_Website_intro_loop_AWA_mobile.mp4"
+// import mobileVideo from "../../static/video/WW_Website_intro_loop_AWA_mobile.mp4"
 
 const Root = withTheme(styled.div`
   display: flex;
@@ -39,27 +39,14 @@ const Root = withTheme(styled.div`
 `)
 
 const HeaderAnimation = props => {
-  const breakpoints = useBreakpoint()
-
-  console.log(breakpoints)
-
   return (
     <Root>
       <div className="background"></div>
-
-      {breakpoints.l === true ? (
-        <Video
-          videoSrcURL={desktopVideo}
-          videoTitle="WyvernWood Title"
-          fileType="video/mp4"
-        />
-      ) : (
-        <Video
-          videoSrcURL={mobileVideo}
-          videoTitle="WyvernWood Title"
-          fileType="video/mp4"
-        />
-      )}
+      <Video
+        videoSrcURL={desktopVideo}
+        videoTitle="WyvernWood Title"
+        fileType="video/mp4"
+      />
     </Root>
   )
 }
