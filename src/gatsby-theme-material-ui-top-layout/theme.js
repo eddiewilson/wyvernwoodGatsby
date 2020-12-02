@@ -2,6 +2,8 @@ import { createMuiTheme } from "@material-ui/core"
 import colors from "../theme/colors"
 import LostaMasta from "../theme/fonts"
 
+const defaultTheme = createMuiTheme()
+
 const theme = createMuiTheme({
   breakpoints: {
     values: {
@@ -28,7 +30,10 @@ const theme = createMuiTheme({
     h2: {
       fontFamily: "losta_mastaregular",
       color: "white",
-      fontSize: "2.555rem",
+      fontSize: "1.555rem",
+      "@media (min-width:600px)": {
+        fontSize: "2.555rem",
+      },
     },
     body1: {
       color: "white",

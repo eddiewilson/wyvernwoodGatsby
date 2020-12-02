@@ -43,10 +43,15 @@ const Intro = props => {
       <div className="background"></div>
       <BoxLayer>
         <Grid container direction="column" justify="center" alignItems="center">
-          <Grid item xs={11} md={8}>
+          <Grid item xs={11} md={7}>
             <Typography variant={"h1"} align={"center"}>
-              Aenean acdo bibendum blandit nib uspendisse non com modo tellu
-              elle ntes que molestie tincid lorem ent.
+              Discover a world full of wonder, where adventure thrives and
+              imaginations fly...
+              <br />
+              <br />
+              <Typography variant={"h2"} align={"center"}>
+                Opening in Spring 2021
+              </Typography>
             </Typography>
           </Grid>
         </Grid>

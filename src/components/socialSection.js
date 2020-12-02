@@ -76,13 +76,22 @@ const SocialSection = props => {
           <BoxLayer my={4}>
             <Box mb={2}>
               <Typography variant={"h2"} align={"center"}>
-                Follow Our Story So Far On Social.
+                Follow along as the story unfolds.
               </Typography>
             </Box>
-            <Typography variant={"body1"} align={"center"}>
-              Quisque bibendum blandit nibh. Suspendi sse non commodo tellus. Ut
-              pellentesque molestie tincidunt. Duis eget felis ligula.
-            </Typography>
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item xs={11} md={8}>
+                <Typography variant={"body1"} align={"center"}>
+                  See our latest adventures, receive news, and be first to hear
+                  about exclusive offers.
+                </Typography>
+              </Grid>
+            </Grid>
             <IconsWrapper my={3}>
               <Grid
                 container
