@@ -5,7 +5,7 @@ import styled from "styled-components"
 import bgVideo from "../../static/images/bg1-video@2x.png"
 import Video from "./video"
 import mp4 from "../../static/video/WW_Website_intro_loop_AWA_desktop.mp4"
-import webm from "../../static/video/another-world-awaits.webm"
+import webm from "../../static/video/awa-trans.webm"
 // import mobileVideo from "../../static/video/WW_Website_intro_loop_AWA_mobile.mp4"
 
 const Root = withTheme(styled.div`

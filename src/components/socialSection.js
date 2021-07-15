@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Typography, Box, Grid, SvgIcon, withTheme } from "@material-ui/core"
 import FacebookLogo from "../../static/svgs/inline/icon_facebook.svg"
 import InstagramLogo from "../../static/svgs/inline/icon_instagram.inline.svg"
-import YouTubeLogo from "../../static/svgs/inline/icon_YouTube.inline.svg"
+import LinkedIn from "../../static/svgs/inline/icon_LinkedIn.inline.svg"
 import bg from "../../static/images/bg-4-social@2x.png"
 import mbg from "../../static/images/mbg4-social@2x.png"
 
@@ -101,20 +101,20 @@ const SocialSection = props => {
               >
                 <SocialLinks>
                   <Box component="span" mx={1}>
-                    <a href="social.com">
+                    <a href="https://www.facebook.com/WyvernwoodUK">
                       <SvgIcon component={FacebookLogo} viewBox="0 0 40 40" />
                     </a>
                   </Box>
                   <Box component="span" mx={1}>
-                    <a href="social.com">
+                    <a href="https://www.instagram.com/wyvernwood.uk/">
                       {" "}
                       <SvgIcon component={InstagramLogo} viewBox="0 0 40 40" />
                     </a>
                   </Box>
                   <Box component="span" mx={1}>
-                    <a href="social.com">
+                    <a href="https://www.linkedin.com/company/wyvernwooduk/">
                       {" "}
-                      <SvgIcon component={YouTubeLogo} viewBox="0 0 40 40" />
+                      <SvgIcon component={LinkedIn} viewBox="0 0 40 40" />
                     </a>
                   </Box>
                 </SocialLinks>
