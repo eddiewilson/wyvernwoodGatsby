@@ -50,7 +50,7 @@ const Intro = props => {
               <br />
               <br />
               <Typography variant={"h2"} align={"center"}>
-                Opening in Spring 2021
+                Opening 2022
               </Typography>
             </Typography>
           </Grid>

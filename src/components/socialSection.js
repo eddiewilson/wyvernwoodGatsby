@@ -18,7 +18,7 @@ const Root = withTheme(styled.div`
     z-index: 0;
     background-image: url(${mbg});
     background-position: ${props => props.theme.spacing(0)}px
-      ${props => props.theme.spacing(3)}px;
+      ${props => props.theme.spacing(1)}px;
     background-size: contain;
     background-repeat: no-repeat;
     transform: scaleX(1);
@@ -36,9 +36,15 @@ const SocialLinks = withTheme(styled.div`
   flex-direction: row;
   a {
     transition: all 0.2s ease-in-out 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     svg {
       width: 40px;
       height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       path {
         fill: ${props => props.theme.palette.secondary.main};
       }
