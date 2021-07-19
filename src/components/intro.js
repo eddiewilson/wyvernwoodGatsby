@@ -6,6 +6,18 @@ import mbg from "../../static/images/mbg2-intro@2x.png"
 
 const Root = withTheme(styled.div`
   position: relative;
+  h1 {
+    font-size: ${props => props.theme.spacing(1)}px;
+    ${props => props.theme.breakpoints.up("sm")} {
+      font-size: ${props => props.theme.spacing(1.9)}px;
+    }
+  }
+  h2 {
+    font-size: ${props => props.theme.spacing(1)}px;
+    ${props => props.theme.breakpoints.up("sm")} {
+      font-size: ${props => props.theme.spacing(1.9)}px;
+    }
+  }
   .background {
     top: 0;
     bottom: 0;
@@ -49,9 +61,13 @@ const Intro = props => {
               imaginations fly...
               <br />
               <br />
-              <Typography variant={"h2"} align={"center"}>
-                Opening 2022
-              </Typography>
+            </Typography>
+            <Typography
+              variantMapping={{ h1: "h2" }}
+              variant={"h1"}
+              align={"center"}
+            >
+              Opening 2022
             </Typography>
           </Grid>
         </Grid>
